@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../SearchApiClusterCore/SearchApiClusterCore.iml" filepath="$PROJECT_DIR$/../SearchApiClusterCore/SearchApiClusterCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SearchApiClusterServer/SearchApiClusterServer.iml" filepath="$PROJECT_DIR$/../SearchApiClusterServer/SearchApiClusterServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SearchApiClusterWorker.iml" filepath="$PROJECT_DIR$/SearchApiClusterWorker.iml" />
+    </modules>
+  </component>
+</project>
+

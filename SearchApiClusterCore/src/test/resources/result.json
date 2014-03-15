@@ -1,0 +1,32 @@
+{
+	"result" : {
+		"request_result" :  {
+			"request":"Test request 1",
+			"search_engine" : "Google" ,
+			"responses": {
+				"response":{
+					"rank" : "1" ,
+					"response_string" : "Test response 1"
+					},
+				"response":{
+					"rank" : "2" ,
+					"response_string" : "Test response 2" 
+				    }
+			}
+		},
+		"request_result" :  {
+			"request":"Test request 2",
+			"search_engine" : "Yandex" ,
+			"responses": {
+				"response":{
+					"rank" : "1" ,
+					"response_string" : "Test response 1" 
+				},
+				"response":{
+					"rank" : "2" ,
+					"response_string" : "Test response 2" 
+				}
+			}
+		}
+	}
+}
