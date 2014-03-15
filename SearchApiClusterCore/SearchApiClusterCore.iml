@@ -11,9 +11,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="org.apache.mina:mina-core:3.0.0-M2" level="project" />
-    <orderEntry type="library" name="junit:junit:4.11" level="project" />
-    <orderEntry type="library" name="com.google.code.gson:gson:2.2.4" level="project" />
+    <orderEntry type="library" exported="" name="com.google.code.gson:gson:2.2.4" level="project" />
+    <orderEntry type="library" exported="" name="junit:junit:4.11" level="project" />
+    <orderEntry type="library" exported="" name="org.apache.mina:mina-core:3.0.0-M2" level="project" />
   </component>
 </module>
 
