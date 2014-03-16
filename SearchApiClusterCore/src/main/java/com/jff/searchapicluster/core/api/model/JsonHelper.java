@@ -1,8 +1,8 @@
 package com.jff.searchapicluster.core.api.model;
 
 import com.google.gson.Gson;
-import com.jff.searchapicluster.core.api.entity.json.result.JsonResult;
-import com.jff.searchapicluster.core.api.entity.json.task.JsonTask;
+import com.jff.searchapicluster.core.api.entity.json.result.SearchResult;
+import com.jff.searchapicluster.core.api.entity.json.task.SearchTask;
 
 /**
  * Created by Yevhenii Zapletin on 15.03.14.
@@ -16,17 +16,24 @@ public class JsonHelper {
         gson = new Gson();
     }
 
-    public JsonTask parseTask(String input) {
+    public SearchTask parseTask(String input) {
 
-        JsonTask jsonTask = gson.fromJson(input, JsonTask.class);
+        SearchTask jsonTask = gson.fromJson(input, SearchTask.class);
 
         return jsonTask;
     }
 
-    public JsonResult parseResult(String input) {
+    public SearchResult parseResult(String input) {
 
-        JsonResult jsonResult = gson.fromJson(input, JsonResult.class);
+        SearchResult jsonResult = gson.fromJson(input, SearchResult.class);
 
         return jsonResult;
+    }
+
+    public String toJson(SearchTask searchTask) {
+        return gson.toJson(searchTask);
+    }
+    public String toJson(SearchResult searchResult) {
+        return gson.toJson(searchResult);
     }
 }
