@@ -1,12 +1,12 @@
 <component name="libraryTable">
-    <library name="org.apache.mina:mina-core:3.0.0-M2" type="repository">
-        <properties maven-id="org.apache.mina:mina-core:3.0.0-M2"/>
-        <CLASSES>
-            <root url="jar://$MAVEN_REPOSITORY$/org/apache/mina/mina-core/3.0.0-M2/mina-core-3.0.0-M2.jar!/"/>
-            <root url="jar://$MAVEN_REPOSITORY$/org/apache/mina/mina-codec/3.0.0-M2/mina-codec-3.0.0-M2.jar!/"/>
-            <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar!/"/>
-        </CLASSES>
-        <JAVADOC/>
-        <SOURCES/>
-    </library>
+  <library name="org.apache.mina:mina-core:3.0.0-M2" type="repository">
+    <properties maven-id="org.apache.mina:mina-core:3.0.0-M2" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/mina/mina-core/3.0.0-M2/mina-core-3.0.0-M2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/mina/mina-codec/3.0.0-M2/mina-codec-3.0.0-M2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/slf4j/slf4j-api/1.7.5/slf4j-api-1.7.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
 </component>
