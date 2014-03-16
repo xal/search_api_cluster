@@ -24,6 +24,7 @@
         <processorPath useClasspath="true" />
         <module name="SearchApiClusterCore" />
         <module name="SearchApiClusterServer" />
+        <module name="SearchApiClusterWorker" />
       </profile>
     </annotationProcessing>
   </component>

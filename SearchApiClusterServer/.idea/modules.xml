@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../SearchApiClusterCore/SearchApiClusterCore.iml" filepath="$PROJECT_DIR$/../SearchApiClusterCore/SearchApiClusterCore.iml" />
       <module fileurl="file://$PROJECT_DIR$/SearchApiClusterServer.iml" filepath="$PROJECT_DIR$/SearchApiClusterServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SearchApiClusterWorker/SearchApiClusterWorker.iml" filepath="$PROJECT_DIR$/../SearchApiClusterWorker/SearchApiClusterWorker.iml" />
     </modules>
   </component>
 </project>

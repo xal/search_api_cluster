@@ -8,6 +8,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../SearchApiClusterCore/pom.xml" />
+        <option value="$PROJECT_DIR$/../SearchApiClusterWorker/pom.xml" />
       </list>
     </option>
   </component>
