@@ -24,27 +24,30 @@ class Parser {
 
     /**
      * Constructs Parser with login information
+     *
      * @param username Username on Yandex.XML
      * @param password Password on Yandex.XML
      */
-    public Parser(String username, String password){
+    public Parser(String username, String password) {
         this.username = username;
         this.password = password;
     }
 
     /**
      * Make a query to yandex search engine. Should be before any calls to getResults()
+     *
      * @param queryText text of query to yandex search engine
      * @throws XMLQueryResultsException if having parsing problems or xml format changes
-     * @throws java.io.IOException if connectivity problems
+     * @throws java.io.IOException      if connectivity problems
      */
-    public void query(String queryText)  throws XMLQueryResultsException, IOException {
+    public void query(String queryText) throws XMLQueryResultsException, IOException {
         String xml = getQueryXML(queryText);
         results = parseXMLResults(xml);
     }
 
     /**
      * This method returns the list of actual yandex-generated results
+     *
      * @return Yandex search results
      */
     public List<Result> getResults() {
@@ -167,7 +170,7 @@ class Parser {
         String username = args[1];
         String password = args[2];
         Parser parser = new Parser(username, password);
-        try{
+        try {
             parser.query(query);
         } catch (XMLQueryResultsException e) {
             System.err.println(e.getErrorString());
@@ -194,7 +197,7 @@ class Parser {
             if (!theDir.exists()) {
                 System.out.println("Creating directory: " + dirName);
                 boolean result = theDir.mkdir();
-                if(result) {
+                if (result) {
                     System.out.println("DIR created");
                 }
             }
@@ -207,12 +210,25 @@ class Parser {
                     ReadableByteChannel rbc = Channels.newChannel(url.openStream());
                     FileOutputStream fos = new FileOutputStream(dirName + "/" + index);
                     fos.getChannel().transferFrom(rbc, 0, maxSize);
-                } catch(IOException e) {
+                } catch (IOException e) {
                     System.out.println(e.getMessage());
                 }
                 ++index;
             }
             System.out.println("Done");
         }
+    }
+
+
+    public static List<Result> executeQuery(String username, String password, String query, int count) throws Exception {
+
+        Parser parser = new Parser(username, password);
+
+        parser.query(query);
+
+        List<Result> results = parser.getResults();
+
+        return results;
+
     }
 }

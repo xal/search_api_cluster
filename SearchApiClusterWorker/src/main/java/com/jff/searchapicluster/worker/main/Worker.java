@@ -49,7 +49,7 @@ public class Worker {
         searchTask.settings.countResponses = 20;
         searchTask.settings.searchEngines = new String[2];
 
-        searchTask.settings.searchEngines[0] = "Google";
+//        searchTask.settings.searchEngines[0] = "Google";
         searchTask.settings.searchEngines[1] = "Yandex";
 
 
@@ -58,23 +58,26 @@ public class Worker {
 
     private void search(final SearchTask searchTask) {
 
-        SearchEngine.SearchEngineCallback callback = new SearchEngine.SearchEngineCallback() {
-            @Override
-            public void onResult(SearchResult searchResultArray[]) {
-                for(SearchResult searchResult  : searchResultArray) {
-                    Logger.i(LOG_TAG, String.format("On execute : %s -> %s", searchTask, Arrays.toString(searchResultArray)));
-                }
 
-            }
-
-            @Override
-            public void onError() {
-                Logger.e(LOG_TAG, String.format("On execute : %s", searchTask));
-            }
-        };
-
-        for (SearchEngine engine : engines) {
+        for (final SearchEngine engine : engines) {
             if (isNeedUseEngine(engine, searchTask)) {
+                SearchEngine.SearchEngineCallback callback = new SearchEngine.SearchEngineCallback() {
+                    @Override
+                    public void onResult(SearchResult searchResultArray[]) {
+
+                        String engineName = engine.getName();
+                        Logger.i(LOG_TAG, String.format("\nSuccess %s result = %d \n%s\n", engineName,searchResultArray.length, searchTask));
+
+                        for(SearchResult searchResult  : searchResultArray) {
+                            Logger.i(LOG_TAG, String.format("%s", Arrays.toString(searchResultArray)));
+                        }
+                    }
+
+                    @Override
+                    public void onError() {
+                        Logger.e(LOG_TAG, String.format("On execute : %s", searchTask));
+                    }
+                };
                 engine.executeTask(searchTask, callback);
             }
         }
@@ -88,7 +91,7 @@ public class Worker {
 
         for (String taskEngine : searchTask.settings.searchEngines) {
 
-            if (taskEngine.equalsIgnoreCase(engineName)) {
+            if (taskEngine != null && taskEngine.equalsIgnoreCase(engineName)) {
                 isNeedUse = true;
                 break;
             }
