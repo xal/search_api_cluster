@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c1609f7-daa3-4574-9ef8-1ac316a71f1d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/google/GoogleEngine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/google/GoogleResults.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/Logger.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Parser.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Result.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/model/entity/SearchEngine.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/TestGoogleSea.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/Worker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/XMLQueryResultsException.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/YandexEngine.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/result/JsonResult.java" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/result/SearchResult.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/result/JsonResultResponse.java" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/result/SearchResultResponse.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/task/JsonTask.java" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/task/SearchTask.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/task/JsonTaskSettings.java" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/task/SearchTaskSettings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/model/JsonHelper.java" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/model/JsonHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SearchApiClusterWorker/SearchApiClusterWorker.iml" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/SearchApiClusterWorker.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Parser.java" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Parser.java" />
     </list>
     <ignored path="SearchApiClusterServer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -74,6 +57,23 @@
       </breakpoint>
     </breakpoint_any>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints>
+      <breakpoint url="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/Worker.java" line="55" class="com.jff.searchapicluster.worker.main.Worker" package="com.jff.searchapicluster.worker.main">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -86,20 +86,11 @@
       <file leaf-file-name="Worker.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/Worker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="36" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.0" vertical-offset="906" max-vertical-offset="1575">
+            <state line="74" column="25" selection-start="2479" selection-end="2479" vertical-scroll-proportion="0.0" vertical-offset="993" max-vertical-offset="1620">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#868#882#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchTask.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/task/SearchTask.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="13" selection-start="104" selection-end="104" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="375">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -125,7 +116,7 @@
       <file leaf-file-name="SearchEngine.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/model/entity/SearchEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="28" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="320" max-vertical-offset="780">
+            <state line="36" column="0" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="780">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#418#419#0" expanded="true" />
@@ -137,12 +128,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GoogleEngine.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="GoogleEngine.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/google/GoogleEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="31" selection-start="1674" selection-end="1674" vertical-scroll-proportion="0.5167464" vertical-offset="366" max-vertical-offset="1710">
+            <state line="101" column="39" selection-start="1325" selection-end="4112" vertical-scroll-proportion="0.0" vertical-offset="1083" max-vertical-offset="1710">
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Parser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Parser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="226" column="19" selection-start="9218" selection-end="9218" vertical-scroll-proportion="0.0" vertical-offset="2735" max-vertical-offset="3390">
+              <folding>
+                <element signature="e#3735#3743#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -175,13 +177,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="YandexEngine.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="YandexEngine.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/YandexEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="14" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="6" column="0" selection-start="354" selection-end="354" vertical-scroll-proportion="0.22556391" vertical-offset="0" max-vertical-offset="1485">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -210,18 +210,18 @@
         <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/GoogleEngine.java" />
         <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Result.java" />
         <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/XMLQueryResultsException.java" />
-        <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Parser.java" />
         <option value="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/Logger.java" />
         <option value="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/task/SearchTask.java" />
         <option value="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/task/SearchTaskSettings.java" />
         <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/google/TestGoogleSea.java" />
         <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/model/entity/SearchEngine.java" />
-        <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/YandexEngine.java" />
         <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/TestGoogleSea.java" />
         <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/google/GoogleEngine.java" />
-        <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/Worker.java" />
         <option value="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/result/SearchResultResponse.java" />
         <option value="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/entity/json/result/SearchResult.java" />
+        <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/Worker.java" />
+        <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Parser.java" />
+        <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/YandexEngine.java" />
       </list>
     </option>
   </component>
@@ -897,7 +897,15 @@
       <created>1394998851595</created>
       <updated>1394998851595</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Core + Google API">
+      <created>1395005429117</created>
+      <updated>1395005429117</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Yandex API skeleton&#10;">
+      <created>1395006741266</created>
+      <updated>1395006741266</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -943,7 +951,9 @@
       <TodoPanelSettings />
     </option>
     <MESSAGE value="first version.&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="first version.&#10;" />
+    <MESSAGE value="Core + Google API" />
+    <MESSAGE value="Yandex API skeleton&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Yandex API skeleton&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1065,15 +1075,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="0" selection-start="513" selection-end="513" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3150">
-          <folding>
-            <element signature="e#3709#3717#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/Logger.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="4" selection-start="280" selection-end="280" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
@@ -1102,15 +1103,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/YandexEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="14" selection-start="488" selection-end="488" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="420">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar!/com/google/gson/Gson.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="64" column="18" selection-start="4389" selection-end="4389" vertical-scroll-proportion="-4.68" vertical-offset="828" max-vertical-offset="1410">
@@ -1122,29 +1114,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="20" column="98" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/model/entity/SearchEngine.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="28" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="140" max-vertical-offset="780">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#418#419#0" expanded="true" />
-            <element signature="e#445#446#0" expanded="true" />
-            <element signature="e#485#486#0" expanded="true" />
-            <element signature="e#517#518#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/Worker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="36" selection-start="1876" selection-end="1876" vertical-scroll-proportion="0.0" vertical-offset="906" max-vertical-offset="1575">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#868#882#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1162,12 +1131,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/model/entity/SearchEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="0" selection-start="838" selection-end="838" vertical-scroll-proportion="0.0" vertical-offset="416" max-vertical-offset="780">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#445#446#0" expanded="true" />
+            <element signature="e#485#486#0" expanded="true" />
+            <element signature="e#517#518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/Worker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="25" selection-start="2479" selection-end="2479" vertical-scroll-proportion="0.0" vertical-offset="993" max-vertical-offset="1620">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#868#882#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/google/GoogleEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="31" selection-start="1674" selection-end="1674" vertical-scroll-proportion="0.5167464" vertical-offset="366" max-vertical-offset="1710">
+        <state line="101" column="39" selection-start="1325" selection-end="4112" vertical-scroll-proportion="0.0" vertical-offset="1083" max-vertical-offset="1710">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Parser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="226" column="19" selection-start="9218" selection-end="9218" vertical-scroll-proportion="0.0" vertical-offset="2735" max-vertical-offset="3390">
+          <folding>
+            <element signature="e#3735#3743#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/YandexEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="0" selection-start="354" selection-end="354" vertical-scroll-proportion="0.22556391" vertical-offset="0" max-vertical-offset="1485">
+          <folding />
         </state>
       </provider>
     </entry>
