@@ -49,7 +49,7 @@ public class Worker {
         searchTask.settings.countResponses = 20;
         searchTask.settings.searchEngines = new String[2];
 
-//        searchTask.settings.searchEngines[0] = "Google";
+        searchTask.settings.searchEngines[0] = "Google";
         searchTask.settings.searchEngines[1] = "Yandex";
 
 

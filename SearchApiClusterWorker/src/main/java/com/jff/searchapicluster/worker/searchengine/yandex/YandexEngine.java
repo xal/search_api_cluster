@@ -1,5 +1,6 @@
 package com.jff.searchapicluster.worker.searchengine.yandex;
 
+import com.jff.searchapicluster.core.api.Logger;
 import com.jff.searchapicluster.core.api.entity.json.result.SearchResult;
 import com.jff.searchapicluster.core.api.entity.json.result.SearchResultResponse;
 import com.jff.searchapicluster.core.api.entity.json.task.SearchTask;
@@ -12,9 +13,15 @@ import java.util.List;
  */
 public class YandexEngine extends SearchEngine {
 
+
+
     public static final String SEARCH_ENGINE_YANDEX_NAME = "Yandex";
-    private static final String YANDEX_USERNAME = "";
-    private static final String YANDEX_PASSWORD = "";
+    private static final String YANDEX_USERNAME = "zapletin-yevhenii";
+    private static final String YANDEX_PASSWORD = "03.250265253:01e8749cfb75b5570361acd6f67b3538";
+    private static final String LOG_TAG = YandexEngine.class.getCanonicalName();
+    private static final int RESPONSES_PER_REQUEST = 10;
+    private static final int ERROR_TIMEOUT = 5000;
+    private static final int QUERY_TIMEOUT = 1000;
 
     public YandexEngine() {
         super(SEARCH_ENGINE_YANDEX_NAME);
@@ -38,56 +45,63 @@ public class YandexEngine extends SearchEngine {
             String query = searchTask.requests[i];
             searchResult.request = query;
 
-            int count = countResponses;
-            List<Result> resultList = Parser.executeQuery(YANDEX_USERNAME, YANDEX_PASSWORD, query, count);
-//
-//
-//            String charset = UTF_8_ENCODING;
-//            for (int j = 0; j < searchTask.settings.countResponses + RESPONSES_PER_REQUEST; j += RESPONSES_PER_REQUEST) {
-//                int startRank = j;
-//
-//                String address = String.format("http://ajax.googleapis.com/ajax/services/search/web?v=1.0&start=%d&q=%s&userip=%s", startRank, URLEncoder.encode(query, charset), ip);
-//                URL url = new URL(address);
-//                Reader reader = new InputStreamReader(url.openStream(), charset);
-//
-//                Logger.d(LOG_TAG, String.format("Execute query : %s", url.toString()));
-//
-//                BufferedReader bufferedReader = new BufferedReader(reader);
-//
-//                GoogleResults results = gson.fromJson(reader, GoogleResults.class);
-//
-//
-//                if (results.getResponseData() == null) {
-//                    Logger.d(LOG_TAG, String.format("Error received from google. Wait = %d", ERROR_TIMEOUT));
-//                    sleep(ERROR_TIMEOUT);
-//                } else {
-//                    Logger.d(LOG_TAG, String.format("Success received from google."));
-//                }
-//                for (int k = 0; k < RESPONSES_PER_REQUEST; k++) {
-//                    GoogleResults.ResponseData responseData = results.getResponseData();
-//                    List<GoogleResults.Result> responseDataResults = responseData.getResults();
-//
-//                    GoogleResults.Result result = responseDataResults.get(k);
-//
-//                    int rank = startRank + k;
-//
-//                    if (rank < searchResult.responses.length) {
-//
-//                        SearchResultResponse searchResultResponse = new SearchResultResponse();
-//                        searchResultResponse.rank = rank;
-//                        searchResultResponse.response_url = result.getUrl();
-//                        searchResultResponse.response_title = result.getTitle();
-//
-//                        searchResult.responses[rank] = searchResultResponse;
-//
-//                    }
-//                }
-//
-//                Logger.d(LOG_TAG, String.format("Wait after success request = %d", QUERY_TIMEOUT));
-//
-//                sleep(QUERY_TIMEOUT);
-//            }
+
+
+
+
+            for (int j = 0; j < searchTask.settings.countResponses + RESPONSES_PER_REQUEST; j += RESPONSES_PER_REQUEST) {
+                int startRank = j;
+
+            List<Result> resultList = null;
+
+                try {
+
+                resultList = Parser.executeQuery(YANDEX_USERNAME, YANDEX_PASSWORD, query);
+                }    catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+//            Logger.d(LOG_TAG, resultList.toString());
+
+
+                if (resultList == null || resultList.isEmpty()) {
+                    Logger.d(LOG_TAG, String.format("Error received from yandex. Wait = %d", ERROR_TIMEOUT));
+                    sleep(ERROR_TIMEOUT);
+                } else {
+                    Logger.d(LOG_TAG, String.format("Success received from yandex."));
+                }
+                for (int k = 0; k < RESPONSES_PER_REQUEST; k++) {
+
+
+                    Result result = resultList.get(k);
+
+                    int rank = startRank + k;
+
+                    if (rank < searchResult.responses.length) {
+
+                        SearchResultResponse searchResultResponse = new SearchResultResponse();
+                        searchResultResponse.rank = rank;
+                        searchResultResponse.response_url = result.getUrl();
+                        searchResultResponse.response_title = result.getTitle();
+
+                        searchResult.responses[rank] = searchResultResponse;
+
+                    }
+                }
+
+                Logger.d(LOG_TAG, String.format("Wait after success request = %d", QUERY_TIMEOUT));
+
+                sleep(QUERY_TIMEOUT);
+            }
         }
         return searchResultArray;
+    }
+
+    private void sleep(int errorTimeout) {
+        try {
+            Thread.sleep(errorTimeout);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }

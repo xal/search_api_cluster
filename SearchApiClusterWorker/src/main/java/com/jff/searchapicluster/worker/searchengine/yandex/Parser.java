@@ -1,5 +1,6 @@
 package com.jff.searchapicluster.worker.searchengine.yandex;
 
+import com.jff.searchapicluster.core.api.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -18,6 +19,7 @@ import java.util.List;
  * Class for parsing Yandex websearch results using Yandex.XML
  */
 class Parser {
+    private static final String LOG_TAG = Parser.class.getCanonicalName();
     private final String username;
     private final String password;
     private List<Result> results;
@@ -61,6 +63,7 @@ class Parser {
                     "user=" + username + "&" +
                     "key=" + password + "&" +
                     "query=" + URLEncoder.encode(query, "UTF-8"));
+            Logger.d(LOG_TAG, String.format("Execute query : %s", url.toString()));
             return getPageAnswer(url);
         } catch (MalformedURLException e) {
             System.err.println("Incorrect url! Should be impossible");
@@ -220,7 +223,7 @@ class Parser {
     }
 
 
-    public static List<Result> executeQuery(String username, String password, String query, int count) throws Exception {
+    public static List<Result> executeQuery(String username, String password, String query) throws Exception {
 
         Parser parser = new Parser(username, password);
 
