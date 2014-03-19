@@ -38,12 +38,14 @@ class Parser {
     /**
      * Make a query to yandex search engine. Should be before any calls to getResults()
      *
+     *
      * @param queryText text of query to yandex search engine
+     * @param pageNumber
      * @throws XMLQueryResultsException if having parsing problems or xml format changes
      * @throws java.io.IOException      if connectivity problems
      */
-    public void query(String queryText) throws XMLQueryResultsException, IOException {
-        String xml = getQueryXML(queryText);
+    public void query(String queryText, int pageNumber) throws XMLQueryResultsException, IOException {
+        String xml = getQueryXML(queryText, pageNumber);
         results = parseXMLResults(xml);
     }
 
@@ -56,13 +58,15 @@ class Parser {
         return results;
     }
 
-    private String getQueryXML(String query) throws IOException {
+    private String getQueryXML(String query, int pageNumber) throws IOException {
 
         try {
             URL url = new URL("http://xmlsearch.yandex.com/xmlsearch?" +
                     "user=" + username + "&" +
                     "key=" + password + "&" +
-                    "query=" + URLEncoder.encode(query, "UTF-8"));
+                    "query=" + URLEncoder.encode(query, "UTF-8") + "&" +
+                    "page=" + pageNumber
+            );
             Logger.d(LOG_TAG, String.format("Execute query : %s", url.toString()));
             return getPageAnswer(url);
         } catch (MalformedURLException e) {
@@ -163,71 +167,14 @@ class Parser {
         }
     }
 
-    public static void main(String[] args) throws IOException {
-        if (args.length != 3 && args.length != 4) {
-            System.out.println("Program arguments should be in format: query username password " +
-                    "[--nosave|directory]\n" +
-                    "(login and password from Yandex.XML service)");
-        }
-        String query = args[0];
-        String username = args[1];
-        String password = args[2];
-        Parser parser = new Parser(username, password);
-        try {
-            parser.query(query);
-        } catch (XMLQueryResultsException e) {
-            System.err.println(e.getErrorString());
-            System.exit(1);
-        } catch (IOException e) {
-            System.err.println("IO error. The possible reason is aborted internet connection");
-            System.exit(2);
-        }
-        List<Result> results = parser.getResults();
-        for (Result result : results) {
-            System.out.println(result.getTitle());
-            System.out.println(result.getUrl());
-            System.out.println(result.getAnnotation());
-            System.out.println(result.getGreenLine());
-            System.out.println();
-        }
-        boolean save = args.length == 3 || !args[3].equals("--nosave");
-        if (save) {
-            String dirName = "yandex_results";
-            if (args.length == 4) {
-                dirName = args[3];
-            }
-            File theDir = new File(dirName);
-            if (!theDir.exists()) {
-                System.out.println("Creating directory: " + dirName);
-                boolean result = theDir.mkdir();
-                if (result) {
-                    System.out.println("DIR created");
-                }
-            }
-            System.out.println("Saving results in " + dirName);
-            int maxSize = 2 << 24; // max file size in bytes
-            int index = 0;
-            for (Result result : results) {
-                URL url = new URL(result.getUrl());
-                try {
-                    ReadableByteChannel rbc = Channels.newChannel(url.openStream());
-                    FileOutputStream fos = new FileOutputStream(dirName + "/" + index);
-                    fos.getChannel().transferFrom(rbc, 0, maxSize);
-                } catch (IOException e) {
-                    System.out.println(e.getMessage());
-                }
-                ++index;
-            }
-            System.out.println("Done");
-        }
-    }
 
 
-    public static List<Result> executeQuery(String username, String password, String query) throws Exception {
+
+    public static List<Result> executeQuery(String username, String password, String query, int pageNumber) throws Exception {
 
         Parser parser = new Parser(username, password);
 
-        parser.query(query);
+        parser.query(query, pageNumber);
 
         List<Result> results = parser.getResults();
 

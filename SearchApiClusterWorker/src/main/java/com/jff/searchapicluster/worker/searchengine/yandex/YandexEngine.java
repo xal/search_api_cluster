@@ -14,7 +14,6 @@ import java.util.List;
 public class YandexEngine extends SearchEngine {
 
 
-
     public static final String SEARCH_ENGINE_YANDEX_NAME = "Yandex";
     private static final String YANDEX_USERNAME = "zapletin-yevhenii";
     private static final String YANDEX_PASSWORD = "03.250265253:01e8749cfb75b5570361acd6f67b3538";
@@ -44,24 +43,18 @@ public class YandexEngine extends SearchEngine {
 
             String query = searchTask.requests[i];
             searchResult.request = query;
-
-
-
-
+            List<Result> resultList = null;
 
             for (int j = 0; j < searchTask.settings.countResponses + RESPONSES_PER_REQUEST; j += RESPONSES_PER_REQUEST) {
                 int startRank = j;
 
-            List<Result> resultList = null;
-
+                int pageNumber = j % RESPONSES_PER_REQUEST;
                 try {
 
-                resultList = Parser.executeQuery(YANDEX_USERNAME, YANDEX_PASSWORD, query);
-                }    catch (Exception e) {
+                    resultList = Parser.executeQuery(YANDEX_USERNAME, YANDEX_PASSWORD, query, pageNumber);
+                } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-//            Logger.d(LOG_TAG, resultList.toString());
 
 
                 if (resultList == null || resultList.isEmpty()) {
@@ -71,21 +64,15 @@ public class YandexEngine extends SearchEngine {
                     Logger.d(LOG_TAG, String.format("Success received from yandex."));
                 }
                 for (int k = 0; k < RESPONSES_PER_REQUEST; k++) {
-
-
                     Result result = resultList.get(k);
-
                     int rank = startRank + k;
-
                     if (rank < searchResult.responses.length) {
-
                         SearchResultResponse searchResultResponse = new SearchResultResponse();
                         searchResultResponse.rank = rank;
                         searchResultResponse.response_url = result.getUrl();
                         searchResultResponse.response_title = result.getTitle();
 
                         searchResult.responses[rank] = searchResultResponse;
-
                     }
                 }
 

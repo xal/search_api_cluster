@@ -1,5 +1,6 @@
 package com.jff.searchapicluster.worker.main;
 
+import com.google.gson.Gson;
 import com.jff.searchapicluster.core.api.Logger;
 import com.jff.searchapicluster.core.api.entity.json.result.SearchResult;
 import com.jff.searchapicluster.core.api.entity.json.task.SearchTask;
@@ -18,7 +19,8 @@ import java.util.List;
 public class Worker {
 
     private static final String LOG_TAG = Worker.class.getCanonicalName();
-    public static final String MY_IP = "62.182.67.92";
+//    public static final String MY_IP = "62.182.67.92";
+    public static final String MY_IP = "77.52.28.208";
     private List<SearchEngine> engines = new ArrayList<SearchEngine>();
 
     public static void main(String args[]) {
@@ -71,6 +73,11 @@ public class Worker {
                         for(SearchResult searchResult  : searchResultArray) {
                             Logger.i(LOG_TAG, String.format("%s", Arrays.toString(searchResultArray)));
                         }
+
+                        Gson gson = new Gson();
+
+                        String json = gson.toJson(searchResultArray);
+                        System.out.println(json);
                     }
 
                     @Override
