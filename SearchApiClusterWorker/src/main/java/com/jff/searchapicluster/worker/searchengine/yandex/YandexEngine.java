@@ -15,16 +15,20 @@ public class YandexEngine extends SearchEngine {
 
 
     public static final String SEARCH_ENGINE_YANDEX_NAME = "Yandex";
-    private static final String YANDEX_USERNAME = "zapletin-yevhenii";
-    private static final String YANDEX_PASSWORD = "03.250265253:01e8749cfb75b5570361acd6f67b3538";
+
     private static final String LOG_TAG = YandexEngine.class.getCanonicalName();
     private static final int RESPONSES_PER_REQUEST = 10;
     private static final int ERROR_TIMEOUT = 5000;
     private static final int QUERY_TIMEOUT = 1000;
+    private String yandexUsername;
+    private String yandexPassword;
 
-    public YandexEngine() {
+    public YandexEngine(String yandexUsername, String yandexPassword) {
         super(SEARCH_ENGINE_YANDEX_NAME);
+        this.yandexUsername = yandexUsername;
+        this.yandexPassword = yandexPassword;
     }
+
 
     @Override
     protected SearchResult[] performSearch(SearchTask searchTask) throws Exception {
@@ -51,7 +55,7 @@ public class YandexEngine extends SearchEngine {
                 int pageNumber = j % RESPONSES_PER_REQUEST;
                 try {
 
-                    resultList = Parser.executeQuery(YANDEX_USERNAME, YANDEX_PASSWORD, query, pageNumber);
+                    resultList = Parser.executeQuery(yandexUsername, yandexPassword, query, pageNumber);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

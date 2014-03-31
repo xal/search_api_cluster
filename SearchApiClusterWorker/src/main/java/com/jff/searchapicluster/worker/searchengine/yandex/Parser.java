@@ -162,6 +162,7 @@ class Parser {
             }
             return results;
         } catch (Exception e) {
+            Logger.e(LOG_TAG, xml);
             throw new XMLQueryResultsException(
                     XMLQueryResultsException.ParseErrorCode, "Cannot parse XML file");
         }

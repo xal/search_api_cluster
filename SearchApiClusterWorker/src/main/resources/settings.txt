@@ -1,0 +1,7 @@
+# DonNTU ip
+#localIP = 77.52.28.208
+# Home ip
+#localIP = 62.182.67.92
+localIP = 95.164.19.62
+yandexUsername = zapletin-yevhenii
+yandexPassword = 03.250265253:01e8749cfb75b5570361acd6f67b3538

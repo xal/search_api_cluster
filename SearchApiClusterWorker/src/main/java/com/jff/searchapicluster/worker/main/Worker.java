@@ -8,6 +8,9 @@ import com.jff.searchapicluster.core.api.entity.json.task.SearchTaskSettings;
 import com.jff.searchapicluster.worker.model.entity.SearchEngine;
 import com.jff.searchapicluster.worker.searchengine.google.GoogleEngine;
 import com.jff.searchapicluster.worker.searchengine.yandex.YandexEngine;
+import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,8 +22,7 @@ import java.util.List;
 public class Worker {
 
     private static final String LOG_TAG = Worker.class.getCanonicalName();
-//    public static final String MY_IP = "62.182.67.92";
-    public static final String MY_IP = "77.52.28.208";
+
     private List<SearchEngine> engines = new ArrayList<SearchEngine>();
 
     public static void main(String args[]) {
@@ -33,8 +35,18 @@ public class Worker {
 
     private void init() {
 
-        engines.add(new GoogleEngine(MY_IP));
-        engines.add(new YandexEngine());
+        try {
+            Configuration config = new PropertiesConfiguration("settings.txt");
+            String localIP = config.getString("localIP");
+            String yandexUsername = config.getString("yandexUsername");
+            String yandexPassword = config.getString("yandexPassword");
+            engines.add(new GoogleEngine(localIP));
+            engines.add(new YandexEngine(yandexUsername, yandexPassword));
+        } catch (ConfigurationException e) {
+            e.printStackTrace();
+        }
+
+
     }
 
     private void go() {

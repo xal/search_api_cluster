@@ -12,6 +12,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="SearchApiClusterCore" />
+    <orderEntry type="library" name="commons-configuration:commons-configuration:20041012.002804" level="project" />
   </component>
 </module>
 
