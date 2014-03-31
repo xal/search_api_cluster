@@ -2,31 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c1609f7-daa3-4574-9ef8-1ac316a71f1d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/org/apache/mina/example/echoserver/ssl/bogus.cert" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/message/AbstractMessage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/AbstractMessageDecoder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/AbstractMessageEncoder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/message/AddMessage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/AddMessageDecoder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/AddMessageEncoder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/Client.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/ClientSessionHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/Constants.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/message/ResultMessage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/ResultMessageDecoder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/ResultMessageEncoder.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/Server.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/ServerSessionHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/SumUpProtocolCodecFactory.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_apache_directory_studio_org_slf4j_log4j12_1_6_4.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_apache_mina_mina_core_2_0_7.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/message/package.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/org/apache/mina/example/chat/serverContext.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/org_apache_mina_mina_core_3_0_0_M2.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SearchApiClusterCore/SearchApiClusterCore.iml" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/SearchApiClusterCore.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SearchApiClusterServer.iml" afterPath="$PROJECT_DIR$/SearchApiClusterServer.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SearchApiClusterWorker/SearchApiClusterWorker.iml" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/SearchApiClusterWorker.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/resources/log4j.properties" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/org/apache/mina/example/chat/serverContext.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/org/apache/mina/example/echoserver/ssl/bogus.cert" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/Logger.java" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/Logger.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SearchApiClusterWorker/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/.idea/workspace.xml" />
     </list>
@@ -667,7 +646,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="774" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />

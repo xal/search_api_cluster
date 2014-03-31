@@ -1,27 +1,43 @@
 package com.jff.searchapicluster.core.api;
 
+import org.slf4j.LoggerFactory;
+
 /**
  * Created by Yevhenii Zapletin on 16.03.14.
  */
 public class Logger {
 
-    private static final String TYPE_ERROR = "Error";
-    private static final String TYPE_INFO = "Info";
-    private static final String TYPE_DEBUG = "Debug";
+    private enum Type {
+        ERROR, INFO, DEBUG;
+    }
 
     public static void i(String tag, String message) {
-        printMessage(TYPE_INFO, tag, message);
+        printMessage(Type.INFO, tag, message);
     }
 
     public static void d(String tag, String message) {
-        printMessage(TYPE_DEBUG, tag, message);
+        printMessage(Type.DEBUG, tag, message);
     }
 
     public static void e(String tag, String message) {
-        printMessage(TYPE_ERROR, tag, message);
+        printMessage(Type.ERROR, tag, message);
     }
 
-    private static void printMessage(String type, String tag, String message) {
-        System.out.println(String.format("%s:%s:%s", type, tag, message));
+    private static void printMessage(Type type, String tag, String message) {
+        org.slf4j.Logger logger = LoggerFactory.getLogger(tag);
+
+
+        switch (type) {
+
+            case ERROR:
+                logger.error(message);
+                break;
+            case INFO:
+                logger.info(message);
+                break;
+            case DEBUG:
+                logger.debug(message);
+                break;
+        }
     }
 }
