@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="org.apache.directory.studio:org.slf4j.log4j12:1.6.4" type="repository">
+    <properties maven-id="org.apache.directory.studio:org.slf4j.log4j12:1.6.4" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/org.slf4j.log4j12-1.6.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-log4j12-1.6.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/org.slf4j.api-1.6.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/slf4j-api-1.6.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/org.apache.logging.log4j-1.2.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/log4j-1.2.16.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/annotations-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/org.slf4j.log4j12-1.6.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
