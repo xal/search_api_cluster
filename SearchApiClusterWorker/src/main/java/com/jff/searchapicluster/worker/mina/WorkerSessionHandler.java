@@ -17,30 +17,29 @@
  *  under the License.
  *
  */
-package org.apache.mina.example.sumup;
+package com.jff.searchapicluster.worker.mina;
 
-import org.apache.mina.core.service.IoHandler;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
-import org.apache.mina.example.sumup.message.AddMessage;
-import org.apache.mina.example.sumup.message.ResultMessage;
+import com.jff.searchapicluster.core.mina.message.AddMessage;
+import com.jff.searchapicluster.core.mina.message.ResultMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * {@link org.apache.mina.core.service.IoHandler} for SumUp client.
+ * {@link org.apache.mina.core.service.IoHandler} for SumUp com.jff.searchapicluster.worker.mina.
  *
  * @author <a href="http://mina.apache.org">Apache MINA Project</a>
  */
-public class ClientSessionHandler extends IoHandlerAdapter {
+public class WorkerSessionHandler extends IoHandlerAdapter {
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(ClientSessionHandler.class);
+    private final static Logger LOGGER = LoggerFactory.getLogger(WorkerSessionHandler.class);
     
     private final int[] values;
 
     private boolean finished;
 
-    public ClientSessionHandler(int[] values) {
+    public WorkerSessionHandler(int[] values) {
         this.values = values;
     }
 
@@ -61,12 +60,12 @@ public class ClientSessionHandler extends IoHandlerAdapter {
 
     @Override
     public void messageReceived(IoSession session, Object message) {
-        // server only sends ResultMessage. otherwise, we will have to identify
+        // mina only sends ResultMessage. otherwise, we will have to identify
         // its type using instanceof operator.
         ResultMessage rm = (ResultMessage) message;
         if (rm.isOk()) {
-            // server returned OK code.
-            // if received the result message which has the last sequence
+            // mina returned OK code.
+            // if received the result com.jff.searchapicluster.core.mina.message which has the last sequence
             // number,
             // it is time to disconnect.
             if (rm.getSequence() == values.length - 1) {

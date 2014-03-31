@@ -1,0 +1,16 @@
+{
+	"task" : {
+		"requests" : {
+			"request" : "Test request 1",
+			"request" : "Test request 2",
+			"request" : "Test request 3"	
+		},
+		"settings" : {
+			"count_responses" : "10",
+			"search_engines" : {
+				"search_engine" : "Google",
+				"search_engine" : "Yandex"
+			}
+		}
+	}
+}

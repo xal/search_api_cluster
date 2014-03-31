@@ -17,19 +17,18 @@
  *  under the License.
  *
  */
-package org.apache.mina.example.sumup;
+package com.jff.searchapicluster.mina.handler;
 
-import org.apache.mina.core.service.IoHandler;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;
 import org.apache.mina.core.session.IoSession;
-import org.apache.mina.example.sumup.message.AddMessage;
-import org.apache.mina.example.sumup.message.ResultMessage;
+import com.jff.searchapicluster.core.mina.message.AddMessage;
+import com.jff.searchapicluster.core.mina.message.ResultMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 /**
- * {@link org.apache.mina.core.service.IoHandler} for SumUp server.
+ * {@link org.apache.mina.core.service.IoHandler} for SumUp mina.
  *
  * @author <a href="http://mina.apache.org">Apache MINA Project</a>
  */
@@ -50,7 +49,7 @@ public class ServerSessionHandler extends IoHandlerAdapter {
 
     @Override
     public void messageReceived(IoSession session, Object message) {
-        // client only sends AddMessage. otherwise, we will have to identify
+        // com.jff.searchapicluster.worker.mina only sends AddMessage. otherwise, we will have to identify
         // its type using instanceof operator.
         AddMessage am = (AddMessage) message;
 
@@ -59,7 +58,7 @@ public class ServerSessionHandler extends IoHandlerAdapter {
         int value = am.getValue();
         long expectedSum = (long) sum + value;
         if (expectedSum > Integer.MAX_VALUE || expectedSum < Integer.MIN_VALUE) {
-            // if the sum overflows or underflows, return error message
+            // if the sum overflows or underflows, return error com.jff.searchapicluster.core.mina.message
             ResultMessage rm = new ResultMessage();
             rm.setSequence(am.getSequence()); // copy sequence
             rm.setOk(false);
@@ -69,7 +68,7 @@ public class ServerSessionHandler extends IoHandlerAdapter {
             sum = (int) expectedSum;
             session.setAttribute(SUM_KEY, new Integer(sum));
 
-            // return the result message
+            // return the result com.jff.searchapicluster.core.mina.message
             ResultMessage rm = new ResultMessage();
             rm.setSequence(am.getSequence()); // copy sequence
             rm.setOk(true);
@@ -81,7 +80,7 @@ public class ServerSessionHandler extends IoHandlerAdapter {
     @Override
     public void sessionIdle(IoSession session, IdleStatus status) {
         LOGGER.info("Disconnecting the idle.");
-        // disconnect an idle client
+        // disconnect an idle com.jff.searchapicluster.worker.mina
         session.close(true);
     }
 

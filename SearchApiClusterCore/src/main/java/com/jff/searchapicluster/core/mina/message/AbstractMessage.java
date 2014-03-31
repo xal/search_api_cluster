@@ -17,29 +17,23 @@
  *  under the License.
  *
  */
-package org.apache.mina.example.sumup.codec;
+package com.jff.searchapicluster.core.mina.message;
 
-import org.apache.mina.example.sumup.message.AddMessage;
-import org.apache.mina.example.sumup.message.ResultMessage;
-import org.apache.mina.filter.codec.ProtocolCodecFactory;
-import org.apache.mina.filter.codec.demux.DemuxingProtocolCodecFactory;
+import java.io.Serializable;
 
 /**
- * A {@link org.apache.mina.filter.codec.ProtocolCodecFactory} that provides a protocol codec for
- * SumUp protocol.
+ * A base com.jff.searchapicluster.core.mina.message for SumUp protocol messages.
  *
  * @author <a href="http://mina.apache.org">Apache MINA Project</a>
  */
-public class SumUpProtocolCodecFactory extends DemuxingProtocolCodecFactory {
+public abstract class AbstractMessage implements Serializable {
+    private int sequence;
 
-    public SumUpProtocolCodecFactory(boolean server) {
-        if (server) {
-            super.addMessageDecoder(AddMessageDecoder.class);
-            super.addMessageEncoder(ResultMessage.class, ResultMessageEncoder.class);
-        } else // Client
-        {
-            super.addMessageEncoder(AddMessage.class, AddMessageEncoder.class);
-            super.addMessageDecoder(ResultMessageDecoder.class);
-        }
+    public int getSequence() {
+        return sequence;
+    }
+
+    public void setSequence(int sequence) {
+        this.sequence = sequence;
     }
 }

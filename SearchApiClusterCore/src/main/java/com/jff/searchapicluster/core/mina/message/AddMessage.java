@@ -17,29 +17,19 @@
  *  under the License.
  *
  */
-package org.apache.mina.example.sumup.message;
+package com.jff.searchapicluster.core.mina.message;
 
 /**
- * <code>RESULT</code> message in SumUp protocol.
+ * <code>ADD</code> com.jff.searchapicluster.core.mina.message in SumUp protocol.
  *
  * @author <a href="http://mina.apache.org">Apache MINA Project</a>
  */
-public class ResultMessage extends AbstractMessage {
-    private static final long serialVersionUID = 7371210248110219946L;
-
-    private boolean ok;
+public class AddMessage extends AbstractMessage {
+    private static final long serialVersionUID = -940833727168119141L;
 
     private int value;
 
-    public ResultMessage() {
-    }
-
-    public boolean isOk() {
-        return ok;
-    }
-
-    public void setOk(boolean ok) {
-        this.ok = ok;
+    public AddMessage() {
     }
 
     public int getValue() {
@@ -52,10 +42,7 @@ public class ResultMessage extends AbstractMessage {
 
     @Override
     public String toString() {
-        if (ok) {
-            return getSequence() + ":RESULT(" + value + ')';
-        } else {
-            return getSequence() + ":RESULT(ERROR)";
-        }
+        // it is a good practice to create toString() method on com.jff.searchapicluster.core.mina.message classes.
+        return getSequence() + ":ADD(" + value + ')';
     }
 }

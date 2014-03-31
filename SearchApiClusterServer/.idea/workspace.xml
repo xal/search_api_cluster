@@ -2,10 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8c1609f7-daa3-4574-9ef8-1ac316a71f1d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/resources/log4j.properties" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/org/apache/mina/example/chat/serverContext.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/org/apache/mina/example/echoserver/ssl/bogus.cert" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/Logger.java" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/Logger.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/commons_configuration_commons_configuration_20041012_002804.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/settings.txt" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/task.json" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/AbstractMessageDecoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/AbstractMessageEncoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/AddMessageDecoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/AddMessageEncoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/Constants.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/ResultMessageDecoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/ResultMessageEncoder.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/codec/SumUpProtocolCodecFactory.java" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/Client.java" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/mina/Worker.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/ClientSessionHandler.java" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/mina/WorkerSessionHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/Server.java" afterPath="$PROJECT_DIR$/src/test/java/com/jff/searchapicluster/mina/handler/Server.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/ServerSessionHandler.java" afterPath="$PROJECT_DIR$/src/test/java/com/jff/searchapicluster/mina/handler/ServerSessionHandler.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/message/AbstractMessage.java" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/mina/message/AbstractMessage.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/message/AddMessage.java" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/mina/message/AddMessage.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/message/ResultMessage.java" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/mina/message/ResultMessage.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/message/package.html" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/mina/message/package.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SearchApiClusterCore/SearchApiClusterCore.iml" afterPath="$PROJECT_DIR$/../SearchApiClusterCore/SearchApiClusterCore.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SearchApiClusterServer.iml" afterPath="$PROJECT_DIR$/SearchApiClusterServer.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/resources/log4j.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/resources/settings.txt" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/resources/settings.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../SearchApiClusterWorker/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../SearchApiClusterWorker/.idea/workspace.xml" />
     </list>
@@ -109,7 +129,7 @@
       <file leaf-file-name="GoogleEngine.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/google/GoogleEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="101" column="39" selection-start="1325" selection-end="4112" vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="1710">
+            <state line="101" column="33" selection-start="1325" selection-end="4112" vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="1710">
               <folding />
             </state>
           </provider>
@@ -118,7 +138,7 @@
       <file leaf-file-name="Parser.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Parser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="185" column="19" selection-start="7264" selection-end="7264" vertical-scroll-proportion="0.0" vertical-offset="2775" max-vertical-offset="2865">
+            <state line="185" column="0" selection-start="7264" selection-end="7264" vertical-scroll-proportion="0.0" vertical-offset="2775" max-vertical-offset="2865">
               <folding />
             </state>
           </provider>
@@ -152,27 +172,27 @@
         </entry>
       </file>
       <file leaf-file-name="ServerSessionHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/ServerSessionHandler.java">
+        <entry file="file://$PROJECT_DIR$/src/test/java/com/jff/searchapicluster/mina/handler/ServerSessionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="49" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200">
+            <state line="26" column="24" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1455">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/Client.java">
+      <file leaf-file-name="Worker.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/mina/Worker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="14" selection-start="1970" selection-end="1970" vertical-scroll-proportion="0.44334975" vertical-offset="180" max-vertical-offset="1245">
+            <state line="74" column="41" selection-start="2632" selection-end="2632" vertical-scroll-proportion="0.31061807" vertical-offset="524" max-vertical-offset="1155">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClientSessionHandler.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/ClientSessionHandler.java">
+      <file leaf-file-name="WorkerSessionHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/mina/WorkerSessionHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="11" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035">
+            <state line="41" column="11" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1035">
               <folding />
             </state>
           </provider>
@@ -215,6 +235,11 @@
         <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Parser.java" />
         <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/YandexEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/Client.java" />
+        <option value="$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/worker/mina/client/Client.java" />
+        <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/client/Client.java" />
+        <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/client/Client.java" />
+        <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/mina/Client.java" />
+        <option value="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/mina/Worker.java" />
       </list>
     </option>
   </component>
@@ -273,14 +298,8 @@
               <option name="myItemId" value="SearchApiClusterServer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SearchApiClusterServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SearchApiClusterServer" />
+              <option name="myItemId" value="SearchApiClusterWorker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -290,13 +309,17 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SearchApiClusterServer" />
+              <option name="myItemId" value="SearchApiClusterWorker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -304,7 +327,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="SearchApiClusterServer" />
+              <option name="myItemId" value="SearchApiClusterWorker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -322,7 +345,33 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="SearchApiClusterWorker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="worker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
               <option name="myItemId" value="SearchApiClusterServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchApiClusterWorker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -338,7 +387,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="sumup" />
+              <option name="myItemId" value="worker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mina" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -351,6 +404,66 @@
               <option name="myItemId" value="SearchApiClusterServer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchApiClusterServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchApiClusterCore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchApiClusterServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchApiClusterCore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchApiClusterServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchApiClusterCore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchApiClusterServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchApiClusterCore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
@@ -361,13 +474,47 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchApiClusterServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SearchApiClusterCore" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="core" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -396,6 +543,7 @@
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
     <property name="Downloaded.Files.Path" value="$PROJECT_DIR$/lib" />
+    <property name="FullScreen" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -409,7 +557,7 @@
       <recent name="$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestClient">
+  <component name="RunManager" selected="Application.TestWorker">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin" singleton="true">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -444,19 +592,6 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <method />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -482,6 +617,19 @@
       <envs />
       <properties />
       <listeners />
+      <method />
+    </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -575,8 +723,8 @@
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
-    <configuration default="false" name="TestClient" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="org.apache.mina.example.sumup.Client" />
+    <configuration default="false" name="TestWorker" type="Application" factoryName="Application" singleton="true">
+      <option name="MAIN_CLASS_NAME" value="com.jff.searchapicluster.worker.mina.Worker" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -585,7 +733,7 @@
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="SearchApiClusterServer" />
+      <module name="SearchApiClusterWorker" />
       <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -594,7 +742,7 @@
     <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Application.Worker" />
       <item index="1" class="java.lang.String" itemvalue="Application.GoogleTest" />
-      <item index="2" class="java.lang.String" itemvalue="Application.TestClient" />
+      <item index="2" class="java.lang.String" itemvalue="Application.TestWorker" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -653,6 +801,7 @@
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39942113" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -665,12 +814,11 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32991204" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991204" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299566" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Thumbnails" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299566" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -699,10 +847,19 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/mina/WorkerSessionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="11" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1425">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="74" column="25" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="1905">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -762,7 +919,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/ServerSessionHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jff/searchapicluster/mina/handler/ServerSessionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="27" selection-start="1088" selection-end="1088" vertical-scroll-proportion="0.0" vertical-offset="375" max-vertical-offset="1200">
           <folding />
@@ -772,7 +929,9 @@
     <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="74" column="25" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="1905">
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -920,16 +1079,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Result.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1005">
-          <folding />
-        </state>
+        <state line="6" column="0" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1005" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/XMLQueryResultsException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="0" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
-          <folding />
-        </state>
+        <state line="7" column="0" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../SearchApiClusterCore/src/main/java/com/jff/searchapicluster/core/api/Logger.java">
@@ -988,23 +1143,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/Worker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="25" selection-start="2308" selection-end="2308" vertical-scroll-proportion="0.0" vertical-offset="1110" max-vertical-offset="1905">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/google/GoogleEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="101" column="39" selection-start="1325" selection-end="4112" vertical-scroll-proportion="0.0" vertical-offset="1083" max-vertical-offset="1710">
+        <state line="101" column="33" selection-start="1325" selection-end="4112" vertical-scroll-proportion="0.0" vertical-offset="1515" max-vertical-offset="1710">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/searchengine/yandex/Parser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="185" column="19" selection-start="7264" selection-end="7264" vertical-scroll-proportion="0.0" vertical-offset="2775" max-vertical-offset="2865">
+        <state line="185" column="0" selection-start="7264" selection-end="7264" vertical-scroll-proportion="0.0" vertical-offset="2775" max-vertical-offset="2865">
           <folding />
         </state>
       </provider>
@@ -1016,23 +1164,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/ServerSessionHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/jff/searchapicluster/mina/handler/ServerSessionHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="49" selection-start="1202" selection-end="1202" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1200">
+        <state line="26" column="24" selection-start="1173" selection-end="1173" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1455">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/ClientSessionHandler.java">
+    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/main/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="11" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1035">
+        <state line="18" column="28" selection-start="824" selection-end="824" vertical-scroll-proportion="0.0" vertical-offset="289" max-vertical-offset="1905">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/mina/WorkerSessionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="11" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="1035">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/org/apache/mina/example/sumup/Client.java">
+    <entry file="file://$PROJECT_DIR$/../SearchApiClusterWorker/src/main/java/com/jff/searchapicluster/worker/mina/Worker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="14" selection-start="1970" selection-end="1970" vertical-scroll-proportion="0.44334975" vertical-offset="180" max-vertical-offset="1245">
+        <state line="74" column="41" selection-start="2632" selection-end="2632" vertical-scroll-proportion="0.31061807" vertical-offset="524" max-vertical-offset="1155">
           <folding />
         </state>
       </provider>
@@ -1102,7 +1259,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>org.apache.directory.studio:org.slf4j.log4j12:1.6.4</last-edited>
+          <last-edited>commons-configuration:commons-configuration:20041012.002804</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

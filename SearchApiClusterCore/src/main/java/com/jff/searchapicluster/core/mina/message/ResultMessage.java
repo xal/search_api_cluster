@@ -17,23 +17,45 @@
  *  under the License.
  *
  */
-package org.apache.mina.example.sumup.message;
-
-import java.io.Serializable;
+package com.jff.searchapicluster.core.mina.message;
 
 /**
- * A base message for SumUp protocol messages.
+ * <code>RESULT</code> com.jff.searchapicluster.core.mina.message in SumUp protocol.
  *
  * @author <a href="http://mina.apache.org">Apache MINA Project</a>
  */
-public abstract class AbstractMessage implements Serializable {
-    private int sequence;
+public class ResultMessage extends AbstractMessage {
+    private static final long serialVersionUID = 7371210248110219946L;
 
-    public int getSequence() {
-        return sequence;
+    private boolean ok;
+
+    private int value;
+
+    public ResultMessage() {
     }
 
-    public void setSequence(int sequence) {
-        this.sequence = sequence;
+    public boolean isOk() {
+        return ok;
+    }
+
+    public void setOk(boolean ok) {
+        this.ok = ok;
+    }
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public String toString() {
+        if (ok) {
+            return getSequence() + ":RESULT(" + value + ')';
+        } else {
+            return getSequence() + ":RESULT(ERROR)";
+        }
     }
 }
