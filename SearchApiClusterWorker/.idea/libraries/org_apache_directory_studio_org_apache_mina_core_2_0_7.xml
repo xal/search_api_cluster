@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="org.apache.directory.studio:org.apache.mina.core:2.0.7" type="repository">
+    <properties maven-id="org.apache.directory.studio:org.apache.mina.core:2.0.7" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/directory/studio/org.apache.mina.core/2.0.7/org.apache.mina.core-2.0.7.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/mina/mina-core/2.0.7/mina-core-2.0.7.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/findbugs/annotations/1.0.0/annotations-1.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/apache/directory/studio/org.apache.mina.core/2.0.7/org.apache.mina.core-2.0.7-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
