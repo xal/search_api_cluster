@@ -19,6 +19,9 @@
  */
 package com.jff.searchapicluster.worker.mina;
 
+import org.apache.commons.configuration.Configuration;
+import org.apache.commons.configuration.ConfigurationException;
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.mina.core.RuntimeIoException;
 import org.apache.mina.core.future.ConnectFuture;
 import org.apache.mina.core.session.IoSession;
@@ -35,11 +38,6 @@ import java.net.InetSocketAddress;
  * @author <a href="http://mina.apache.org">Apache MINA Project</a>
  */
 public class Worker {
-    private static final String HOSTNAME = "localhost";
-
-    private static final int PORT = 5000;
-
-    private static final long CONNECT_TIMEOUT = 30 * 1000L; // 30 seconds
 
 
     public static void main(String[] args) throws Throwable {
@@ -61,37 +59,49 @@ public class Worker {
 
         NioSocketConnector connector = new NioSocketConnector();
 
-        // Configure the service.
-        connector.setConnectTimeoutMillis(CONNECT_TIMEOUT);
+        try {
+            Configuration config = new PropertiesConfiguration("settings.txt");
+            long connectTimeout = config.getLong("timeout");
+            String hostname = config.getString("serverIP");
+            int port = config.getInt("serverPort");
 
 
-        connector.getFilterChain().addLast(
-                "com/jff/searchapicluster/core/mina/codec",
-                new ProtocolCodecFilter(
-                        new ObjectSerializationCodecFactory()));
+            // Configure the service.
+            connector.setConnectTimeoutMillis(connectTimeout);
 
-        connector.getFilterChain().addLast("logger", new LoggingFilter());
 
-        connector.setHandler(new WorkerSessionHandler(values));
+            connector.getFilterChain().addLast(
+                    "com/jff/searchapicluster/core/mina/codec",
+                    new ProtocolCodecFilter(
+                            new ObjectSerializationCodecFactory()));
 
-        IoSession session;
-        for (; ; ) {
-            try {
-                ConnectFuture future = connector.connect(new InetSocketAddress(
-                        HOSTNAME, PORT));
-                future.awaitUninterruptibly();
-                session = future.getSession();
-                break;
-            } catch (RuntimeIoException e) {
-                System.err.println("Failed to connect.");
-                e.printStackTrace();
-                Thread.sleep(5000);
+            connector.getFilterChain().addLast("logger", new LoggingFilter());
+
+            connector.setHandler(new WorkerSessionHandler(values));
+
+            IoSession session;
+            for (; ; ) {
+                try {
+
+                    ConnectFuture future = connector.connect(new InetSocketAddress(
+                            hostname, port));
+                    future.awaitUninterruptibly();
+                    session = future.getSession();
+                    break;
+                } catch (RuntimeIoException e) {
+                    System.err.println("Failed to connect.");
+                    e.printStackTrace();
+                    Thread.sleep(5000);
+                }
             }
+
+            // wait until the summation is done
+            session.getCloseFuture().awaitUninterruptibly();
+
+            connector.dispose();
+
+        } catch (ConfigurationException e) {
+            e.printStackTrace();
         }
-
-        // wait until the summation is done
-        session.getCloseFuture().awaitUninterruptibly();
-
-        connector.dispose();
     }
 }

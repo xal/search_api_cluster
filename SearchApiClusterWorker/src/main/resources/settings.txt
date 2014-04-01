@@ -3,8 +3,9 @@
 # Home ip
 #localIP = 62.182.67.92
 
-serverIP= 95.164.19.62
+serverIP = 127.0.0.1
 serverPort = 5000
+timeout = 150000
 
 localIP = 95.164.19.62
 yandexUsername = zapletin-yevhenii

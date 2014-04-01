@@ -17,8 +17,9 @@
  *  under the License.
  *
  */
-package com.jff.searchapicluster.mina.handler;
+package com.jff.searchapicluster.mina;
 
+import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
 import org.apache.mina.filter.logging.LoggingFilter;
@@ -32,18 +33,17 @@ import java.net.InetSocketAddress;
  * @author <a href="http://mina.apache.org">Apache MINA Project</a>
  */
 public class Server {
-    private static final int SERVER_PORT = 5000;
 
 
     public static void main(String[] args) throws Throwable {
+
+        org.apache.commons.configuration.Configuration config = new PropertiesConfiguration("settings.txt");
+
+
+        int serverPort = config.getInt("listenPort");
+
+
         NioSocketAcceptor acceptor = new NioSocketAcceptor();
-//
-//            acceptor.getFilterChain()
-//                    .addLast(
-//                            "com/jff/searchapicluster/core/mina/codec",
-//                            new ProtocolCodecFilter(
-//                                    new SumUpProtocolCodecFactory(true)));
-//
 
         acceptor.getFilterChain().addLast("com/jff/searchapicluster/core/mina/codec",
                 new ProtocolCodecFilter(new ObjectSerializationCodecFactory()));
@@ -51,8 +51,8 @@ public class Server {
         acceptor.getFilterChain().addLast("logger", new LoggingFilter());
 
         acceptor.setHandler(new ServerSessionHandler());
-        acceptor.bind(new InetSocketAddress(SERVER_PORT));
+        acceptor.bind(new InetSocketAddress(serverPort));
 
-        System.out.println("Listening on port " + SERVER_PORT);
+        System.out.println("Listening on port " + serverPort);
     }
 }

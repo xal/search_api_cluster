@@ -17,7 +17,7 @@
  *  under the License.
  *
  */
-package com.jff.searchapicluster.mina.handler;
+package com.jff.searchapicluster.mina;
 
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IdleStatus;

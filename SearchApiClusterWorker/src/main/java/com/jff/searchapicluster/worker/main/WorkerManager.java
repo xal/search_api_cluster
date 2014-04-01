@@ -19,15 +19,15 @@ import java.util.List;
 /**
  * Created by Yevhenii Zapletin on 16.03.14.
  */
-public class Worker {
+public class WorkerManager {
 
-    private static final String LOG_TAG = Worker.class.getCanonicalName();
+    private static final String LOG_TAG = WorkerManager.class.getCanonicalName();
 
     private List<SearchEngine> engines = new ArrayList<SearchEngine>();
 
     public static void main(String args[]) {
 
-        Worker worker = new Worker();
+        WorkerManager worker = new WorkerManager();
 
         worker.init();
         worker.go();
