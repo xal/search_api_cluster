@@ -17,14 +17,19 @@
  *  under the License.
  *
  */
-package com.jff.searchapicluster.mina;
+package com.jff.searchapicluster.server.mina;
 
+import com.google.gson.Gson;
+import com.jff.searchapicluster.core.api.Logger;
+import com.jff.searchapicluster.core.api.entity.json.task.SearchTask;
+import com.jff.searchapicluster.server.ServerManager;
 import org.apache.commons.configuration.PropertiesConfiguration;
 import org.apache.mina.filter.codec.ProtocolCodecFilter;
 import org.apache.mina.filter.codec.serialization.ObjectSerializationCodecFactory;
 import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
+import java.io.*;
 import java.net.InetSocketAddress;
 
 /**
@@ -34,6 +39,8 @@ import java.net.InetSocketAddress;
  */
 public class Server {
 
+
+    private static final String LOG_TAG = Server.class.getCanonicalName();
 
     public static void main(String[] args) throws Throwable {
 
@@ -54,5 +61,31 @@ public class Server {
         acceptor.bind(new InetSocketAddress(serverPort));
 
         System.out.println("Listening on port " + serverPort);
+        System.out.println("Please enter filename");
+
+        //  open up standard input
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+
+        while (true) {
+            String filepath = br.readLine();
+
+        filepath = "/Users/admin/repos/study_repos/kurs_sp/search_api_cluster/SearchApiClusterServer/task.json";
+            File file = new File(filepath);
+            Logger.d(LOG_TAG, file.getAbsolutePath());
+
+            if(file.exists() && file.isFile()) {
+
+                Gson gson = new Gson();
+
+                SearchTask taskMessage = gson.fromJson(new FileReader(file), SearchTask.class);
+
+                ServerManager serverManager = ServerManager.getInstance();
+
+                Logger.d(LOG_TAG, taskMessage.toString());
+                serverManager.startProcessTask(taskMessage);
+            }      else {
+                Logger.d(LOG_TAG, filepath + "not found");
+            }
+        }
     }
 }

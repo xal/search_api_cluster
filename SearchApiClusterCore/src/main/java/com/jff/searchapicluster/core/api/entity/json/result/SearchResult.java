@@ -1,11 +1,12 @@
 package com.jff.searchapicluster.core.api.entity.json.result;
 
+import java.io.Serializable;
 import java.util.Arrays;
 
 /**
  * Created by Yevhenii Zapletin on 15.03.14.
  */
-public class SearchResult {
+public class SearchResult implements Serializable {
     public String request;
     public String searchEngine;
     public SearchResultResponse[] responses;

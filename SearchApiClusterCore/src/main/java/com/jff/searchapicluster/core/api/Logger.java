@@ -30,13 +30,11 @@ public class Logger {
         switch (type) {
 
             case ERROR:
-                logger.error(message);
-                break;
+
             case INFO:
-                logger.info(message);
-                break;
+
             case DEBUG:
-                logger.debug(message);
+                logger.info(message);
                 break;
         }
     }

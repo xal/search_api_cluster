@@ -42,14 +42,14 @@ public class YandexEngine extends SearchEngine {
 
             searchResultArray[i] = searchResult;
 
-            int countResponses = searchTask.settings.countResponses;
+            int countResponses = searchTask.settings.count_responses;
             searchResult.responses = new SearchResultResponse[countResponses];
 
             String query = searchTask.requests[i];
             searchResult.request = query;
             List<Result> resultList = null;
 
-            for (int j = 0; j < searchTask.settings.countResponses + RESPONSES_PER_REQUEST; j += RESPONSES_PER_REQUEST) {
+            for (int j = 0; j < searchTask.settings.count_responses + RESPONSES_PER_REQUEST; j += RESPONSES_PER_REQUEST) {
                 int startRank = j;
 
                 int pageNumber = j % RESPONSES_PER_REQUEST;

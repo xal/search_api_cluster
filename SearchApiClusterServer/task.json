@@ -1,0 +1,15 @@
+{
+
+		"requests" : [
+			"Hello world",
+			"I am funny"
+		],
+		"settings" : {
+			"count_responses" : "4",
+			"search_engines" : [
+				"Google"
+
+			]
+		}
+
+}

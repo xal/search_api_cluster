@@ -17,51 +17,44 @@
  *  under the License.
  *
  */
-package com.jff.searchapicluster.worker.mina;
+package com.jff.searchapicluster.server.mina;
 
-import com.jff.searchapicluster.core.api.entity.json.task.SearchTask;
-import com.jff.searchapicluster.core.mina.message.TaskMessage;
-import com.jff.searchapicluster.worker.main.WorkerManager;
+import com.jff.searchapicluster.core.mina.message.ResponseMessage;
+import com.jff.searchapicluster.server.ServerManager;
 import org.apache.mina.core.service.IoHandlerAdapter;
 import org.apache.mina.core.session.IoSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class WorkerSessionHandler extends IoHandlerAdapter {
+public class ServerSessionHandler extends IoHandlerAdapter {
+    
+    private static final String SUM_KEY = "sum";
 
-    private final static Logger LOGGER = LoggerFactory.getLogger(WorkerSessionHandler.class);
-
-
-    private WorkerManager workerManager = WorkerManager.getInstance();
-
-    public WorkerSessionHandler() {
-
-    }
+    private final static Logger LOGGER = LoggerFactory.getLogger(ServerSessionHandler.class);
 
 
-
+    private ServerManager serverManager = ServerManager.getInstance();
     @Override
     public void sessionOpened(IoSession session) {
+
+           serverManager.addSession(session);
 
     }
 
     @Override
     public void messageReceived(IoSession session, Object message) {
-
-        TaskMessage searchTask = (TaskMessage) message;
-
-        workerManager.search(searchTask.getRequestId(), searchTask.getRequestNumber(), searchTask.getSearchTask());
-
-    }
-
-    @Override
-    public void exceptionCaught(IoSession session, Throwable cause) {
-        session.close(true);
+        serverManager.handleResult(session, (ResponseMessage) message);
     }
 
     @Override
     public void sessionClosed(IoSession session) throws Exception {
         super.sessionClosed(session);
-        workerManager.connect();
+        serverManager.removeSessions(session);
+    }
+
+    @Override
+    public void exceptionCaught(IoSession session, Throwable cause) {
+        // close the connection on exceptional situation
+        session.close(true);
     }
 }

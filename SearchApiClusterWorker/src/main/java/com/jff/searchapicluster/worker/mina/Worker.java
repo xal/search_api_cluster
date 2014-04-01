@@ -19,6 +19,7 @@
  */
 package com.jff.searchapicluster.worker.mina;
 
+import com.jff.searchapicluster.worker.main.WorkerManager;
 import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.ConfigurationException;
 import org.apache.commons.configuration.PropertiesConfiguration;
@@ -42,66 +43,7 @@ public class Worker {
 
     public static void main(String[] args) throws Throwable {
 
-        args = new String[2];
-        args[0] = "0";
-        args[1] = "1";
 
-        if (args.length == 0) {
-            System.out.println("Please specify the list of any integers");
-            return;
-        }
-
-        // prepare values to sum up
-        int[] values = new int[args.length];
-        for (int i = 0; i < args.length; i++) {
-            values[i] = Integer.parseInt(args[i]);
-        }
-
-        NioSocketConnector connector = new NioSocketConnector();
-
-        try {
-            Configuration config = new PropertiesConfiguration("settings.txt");
-            long connectTimeout = config.getLong("timeout");
-            String hostname = config.getString("serverIP");
-            int port = config.getInt("serverPort");
-
-
-            // Configure the service.
-            connector.setConnectTimeoutMillis(connectTimeout);
-
-
-            connector.getFilterChain().addLast(
-                    "com/jff/searchapicluster/core/mina/codec",
-                    new ProtocolCodecFilter(
-                            new ObjectSerializationCodecFactory()));
-
-            connector.getFilterChain().addLast("logger", new LoggingFilter());
-
-            connector.setHandler(new WorkerSessionHandler(values));
-
-            IoSession session;
-            for (; ; ) {
-                try {
-
-                    ConnectFuture future = connector.connect(new InetSocketAddress(
-                            hostname, port));
-                    future.awaitUninterruptibly();
-                    session = future.getSession();
-                    break;
-                } catch (RuntimeIoException e) {
-                    System.err.println("Failed to connect.");
-                    e.printStackTrace();
-                    Thread.sleep(5000);
-                }
-            }
-
-            // wait until the summation is done
-            session.getCloseFuture().awaitUninterruptibly();
-
-            connector.dispose();
-
-        } catch (ConfigurationException e) {
-            e.printStackTrace();
-        }
+      WorkerManager.getInstance().connect();
     }
 }

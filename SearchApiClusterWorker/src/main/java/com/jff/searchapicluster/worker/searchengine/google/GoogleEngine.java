@@ -46,7 +46,7 @@ public class GoogleEngine extends SearchEngine {
 
             searchResultArray[i] = searchResult;
 
-            int countResponses = searchTask.settings.countResponses;
+            int countResponses = searchTask.settings.count_responses;
             searchResult.responses = new SearchResultResponse[countResponses];
 
             String query = searchTask.requests[i];
@@ -54,7 +54,7 @@ public class GoogleEngine extends SearchEngine {
 
             searchResult.request = query;
 
-            for (int j = 0; j < searchTask.settings.countResponses + RESPONSES_PER_REQUEST; j += RESPONSES_PER_REQUEST) {
+            for (int j = 0; j < searchTask.settings.count_responses + RESPONSES_PER_REQUEST; j += RESPONSES_PER_REQUEST) {
                 int startRank = j;
 
                 String address = String.format("http://ajax.googleapis.com/ajax/services/search/web?v=1.0&start=%d&q=%s&userip=%s", startRank, URLEncoder.encode(query, charset), ip);

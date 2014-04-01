@@ -11,13 +11,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="SearchApiClusterCore" />
-    <orderEntry type="library" name="com.google.code.gson:gson:2.2.4" level="project" />
-    <orderEntry type="library" name="commons-configuration:commons-configuration:20041012.002804" level="project" />
-    <orderEntry type="library" name="org.apache.directory.studio:org.apache.mina.core:2.0.7" level="project" />
+    <orderEntry type="library" exported="" name="com.google.code.gson:gson:2.2.4" level="project" />
+    <orderEntry type="library" exported="" name="commons-configuration:commons-configuration:20041012.002804" level="project" />
+    <orderEntry type="library" exported="" name="org.apache.mina:mina-core:2.0.7" level="project" />
+    <orderEntry type="library" exported="" name="org.apache.directory.studio:org.slf4j.log4j12:1.6.4" level="project" />
+    <orderEntry type="library" name="org.apache.directory.studio:org.slf4j.log4j12:1.6.41" level="project" />
     <orderEntry type="library" name="org.slf4j:slf4j-log4j12:1.6.2" level="project" />
-    <orderEntry type="library" name="org.apache.mina:mina-core:2.0.7" level="project" />
-    <orderEntry type="library" name="org.apache.directory.studio:org.slf4j.log4j12:1.6.4" level="project" />
   </component>
 </module>
 

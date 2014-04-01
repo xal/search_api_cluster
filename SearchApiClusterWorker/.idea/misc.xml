@@ -3,10 +3,10 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+  <component name="IdProvider" IDEtalkID="253410842B39346D7EA637C925C9388B" />
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../SearchApiClusterCore/pom.xml" />
         <option value="$PROJECT_DIR$/../SearchApiClusterServer/pom.xml" />
       </list>
