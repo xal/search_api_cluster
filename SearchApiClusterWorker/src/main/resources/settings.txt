@@ -2,6 +2,7 @@ serverIP = 127.0.0.1
 serverPort = 5000
 timeout = 150000
 
-localIP = 95.164.19.167
+#localIP = 95.164.19.167
+localIP = 77.52.105.95
 yandexUsername = zapletin-yevhenii
 yandexPassword = 03.250265253:01e8749cfb75b5570361acd6f67b3538
